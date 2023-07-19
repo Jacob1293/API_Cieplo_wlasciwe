@@ -4,10 +4,10 @@ namespace form\objects ;
 
 include_once('obiekty-l_formularza.php');
 
-use form\objects\form_model;
+use form\objects\local_form_model;
     
       
-$testy = new form_model();
+$testy = new local_form_model();
           
 if(isset($_GET)) {
    echo "Pobieranie budenk";

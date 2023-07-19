@@ -4,20 +4,37 @@ namespace form\objects ;
 
 include_once('obiekty-l_formularza.php');
 
-use form\objects\form_model;
-    
-      
-$testy = new form_model();
-          
-if(isset($_POST['building_type'])) {
-   echo "Dodano do modelu budynek: ".$_POST['building_type'];
-    $testy->set_building_type($_POST['building_type']);                    
+use form\objects\local_form_model;
+
+## Zmienne
+$obiectsJSON = array();
+
+## Zapisywanie zmiennych do pól
+$domObiekty = new local_form_model();
+
+if(isset($_POST)) {
+    foreach($_POST as $keyPost => $valPost) {
+        //echo "Dodano do modelu : ". $setFunction." zmienna ".$valPost;
+        $obiectsJSON += array($keyPost=>$valPost); 
+    }
+                    
 }
+                
+
+
+$convertObiectsToJSON = json_encode($obiectsJSON);
+print_r($convertObiectsToJSON) 
+
+
+        
+    
+
+
             
-if(isset($_POST['construction_year'])) {
-    echo "Dodano do modelu rok budowy: ".$_POST['construction_year'];
- }
+  
+         
                      
+
 
 
 ?>
