@@ -1,0 +1,24 @@
+//variables
+@import "./variables/_breakpoints.scss";
+@import "./variables/_colors.scss";
+
+//mixins
+@import "./mixins/_boxshadow.scss";
+@import "./mixins/_responder.scss";
+@import "./mixins/_pseudo.scss";
+@import "./mixins/_grid.scss";
+@import "./mixins/_padding.scss";
+@import "./mixins/_fonts.scss";
+@import "./mixins/_hover.scss";
+@import "./mixins/_product_loop_slider.scss";
+@import "./mixins/_products_ul_li.scss";
+//config
+@import "./config/_info.scss";
+@import "./config/_normalize";
+@import "./config/_template.scss";
+@import "./config/_grid.scss";
+
+// template
+@import "./template/_formularz.scss";
+
+

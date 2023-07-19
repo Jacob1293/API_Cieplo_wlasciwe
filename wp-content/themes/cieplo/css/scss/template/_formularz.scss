@@ -1,0 +1,33 @@
+#Formularz {
+    @include grid;      
+    height: 100vh;
+    .tab_form {        
+        a {
+            position: relative;
+            z-index: 99;               
+            &[show="true"] {
+                background-color: green;
+                color: white;                   
+            }
+        }
+    }
+    .formularz_box {        
+        @include box-shadow;
+        width: 100%;
+        padding: 50px 25px;
+        display: block;
+        input[type="radio"] {
+            display: inline-block;
+        }
+        .tab {
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+        .button {
+            @include button;
+        }
+    }
+}
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>sygnet</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="99.8812289%" y1="0.118771115%" x2="0%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#E04500" offset="0%"></stop>
+            <stop stop-color="#E66329" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="sygnet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M50,-1.42108547e-14 C77.6142375,-1.42108547e-14 100,22.3857625 100,50 C100,77.6142375 77.6142375,100 50,100 C22.3857625,100 -1.84741111e-13,77.6142375 -1.84741111e-13,50 C-1.84741111e-13,22.3857625 22.3857625,-1.42108547e-14 50,-1.42108547e-14 Z M50,15.7091562 C31.0616899,15.7091562 15.7091562,31.0616899 15.7091562,50 C15.7091562,68.9383101 31.0616899,84.2908438 50,84.2908438 C68.9383101,84.2908438 84.2908438,68.9383101 84.2908438,50 C84.2908438,31.0616899 68.9383101,15.7091562 50,15.7091562 Z" id="Combined-Shape" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+    </g>
+</svg>

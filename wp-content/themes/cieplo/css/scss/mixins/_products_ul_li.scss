@@ -1,0 +1,170 @@
+@mixin products {
+    ul.products  {
+        display: flex;
+        margin-top: 10px;
+        li.product {
+            position: relative;
+            height: auto;
+            padding: 10px 10px 20px 10px !important;
+            a.woocommerce-LoopProduct-link {
+                width: 100%;
+                height: 100%;  
+                box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
+                padding: 10px 10px 20px 10px;
+                text-align: center;                    
+                transition: all 100ms linear;
+                background-color: #fff;
+                display: block;
+                position: relative;
+                -webkit-transition: .2s linear;
+                transition: .2s linear;
+                &:hover {
+                    box-shadow: 0 0 15px 0 rgba(0,0,0,0);                            
+                }
+                .product_img {
+                    height: 230px;
+                    width: 100%;
+                    position: relative;
+                    .attachment-woocommerce_thumbnail {
+                        margin: 0 !important;
+                        height: 100% !important;
+                        object-fit: contain;
+                    }
+                    .woocommerce-placeholder {
+                        margin: 0 !important;
+                        height: 100% !important;
+                        object-fit: contain;
+                    }
+                }
+                .woocommerce-loop-product__title {
+                    padding: 10px 0 !important;
+                    font-size: 14px !important;
+                    line-height: 24px;
+                    font-weight: bold;
+                }
+                .products-info-box__paragraph {
+                    font-size: 12px;
+                }
+                .products-info-box__price {
+                    margin: 0;
+                    text-align: center;
+                    padding: 0;
+                    display: block;
+                    font-size: unset;
+                    line-height: unset;
+                    margin: 15px 0;
+                    font-weight: bold;
+                    word-break: break-all;
+                    del {
+                        @media(max-width: 575px) {
+                            display: block;
+                        }
+                    }
+                    .woocommerce-Price-amount{
+                        position: relative !important;
+                        bottom: inherit;
+                        left: inherit;
+                        font-size: 20px;
+                        line-height: 1.6;
+                        margin-top: 10px;
+                        font-weight: 600;
+                        padding: 0;
+                        bdi {
+                            @media(max-width: 575px){
+                                display: block;
+                                line-height: 20px;
+                            }
+                        }
+                    }
+                }     
+                .onsale {
+                    font-size: 10px;
+                    line-height: 50px;
+                    min-height: 24px;
+                    padding: 5px;
+                    background-color: $creme;
+                    top: -15px;
+                }                             
+            }
+            .products-info-box__price-box {
+                height: 30px;
+                width: 30px;
+                bottom: 55px;
+                right: 25px;
+                left: inherit;
+                position: absolute;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .products-info-box__cart {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    position: relative;
+                    align-items: center;
+                    right: 5px;
+                }
+            }
+            .ajax_add_to_cart, .product_type_variable, .product_type_simple {
+                position: absolute;
+                bottom: 0;
+                width: 80%;
+                height: 40px;
+                left: 0;
+                right: 0;
+                margin: auto!important;
+                padding: 11px 5px!important;
+                color: #fff;
+                background-color: $creme !important;
+                border: 2px solid $creme !important;
+                text-align: center;
+                border-radius: 20px;
+                -webkit-transition: .2s linear;
+                transition: .2s linear;
+                &:hover {
+                    background-color: #fff !important;
+                    color: $creme;
+                }
+                @media(max-width: 575px) {
+                    font-size: 14px;
+                }
+                @media(max-width: 360px) {
+                    padding: 5px 5px!important;
+                }
+            }
+            .product_type_variable {
+                @media (max-width: 575px) {
+                    padding: 11px 8px!important;
+                }
+            }
+            a.added_to_cart.wc-forward {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: calc(100%) !important;
+                height: calc(100%) !important;
+                background-color: rgba(176,158,126, 0.95);
+                color: #fff;
+                padding: 50% 30px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 0!important;
+                transition: all 100ms linear;
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
+                    content: 'Dodano do koszyka ;-)';
+                    display: block;
+                    font-size: 20px;
+                    height: 30px;
+                    line-height: 30px;
+                }
+            }
+        }            
+    }
+}

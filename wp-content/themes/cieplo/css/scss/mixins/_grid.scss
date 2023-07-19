@@ -1,0 +1,57 @@
+@mixin grid-config {
+  display: grid;
+  height: auto;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
+  width: 100%;
+  @media (max-width: 575px) {
+    column-gap: 15px;
+  }
+}
+@mixin grid {
+  @include grid-config;
+  @include grid-breakpoints;
+}
+@mixin grid-full {
+  @include grid-config;
+  width: 100%;
+}
+
+@mixin grid-slider {
+  height: auto;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  row-gap: 24px;
+  position: relative;
+  width: 80%;
+  @include grid-breakpoints;
+}
+
+@mixin grid-breakpoints {
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: 575px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
+  @media (min-width: 1600px) {
+    max-width: 1500px;
+  }
+}

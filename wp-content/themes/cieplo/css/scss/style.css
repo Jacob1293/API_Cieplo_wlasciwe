@@ -1,0 +1,280 @@
+/*
+Theme Name: 
+Author: Tojekmek
+Author URI: https://www.tojekmek.pl
+Version: 1.0
+*/
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container,
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+body *,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 0;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+button, select, input, option {
+  font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  scroll-behavior: smooth;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.1;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+}
+
+#Formularz {
+  display: -ms-grid;
+  display: grid;
+  height: auto;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  -webkit-column-gap: 24px;
+          column-gap: 24px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100vh;
+}
+
+@media (max-width: 575px) {
+  #Formularz {
+    -webkit-column-gap: 15px;
+            column-gap: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  #Formularz {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (min-width: 576px) {
+  #Formularz {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  #Formularz {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  #Formularz {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #Formularz {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  #Formularz {
+    max-width: 1320px;
+  }
+}
+
+@media (min-width: 1600px) {
+  #Formularz {
+    max-width: 1500px;
+  }
+}
+
+#Formularz .tab_form a {
+  position: relative;
+  z-index: 99;
+}
+
+#Formularz .tab_form a[show="true"] {
+  background-color: green;
+  color: white;
+}
+
+#Formularz .formularz_box {
+  -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 50px 25px;
+  display: block;
+}
+
+#Formularz .formularz_box input[type="radio"] {
+  display: inline-block;
+}
+
+#Formularz .formularz_box .tab {
+  display: none;
+}
+
+#Formularz .formularz_box .show {
+  display: block;
+}
+/*# sourceMappingURL=style.css.map */

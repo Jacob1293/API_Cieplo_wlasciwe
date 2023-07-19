@@ -1,0 +1,60 @@
+@mixin padding-default($value: 100px) {
+  padding-top: $value;
+  padding-bottom: $value;
+  @include respond-below(lg) {
+    padding-top: calc(#{$value} * 3 / 4);
+    padding-bottom: calc(#{$value} * 3 / 4);
+  }
+  @include respond-below(sm) {
+    padding-top: calc(#{$value} * 1 / 2);
+    padding-bottom: calc(#{$value} * 1 / 2);
+  }
+}
+@mixin padding-top($value: 100px) {
+  padding-top: $value;
+  @include respond-below(lg) {
+    padding-top: calc(#{$value}* 3 / 4);
+  }
+  @include respond-below(sm) {
+    padding-top: calc(#{$value}* 1 / 2);
+  }
+}
+@mixin padding-bottom($value: 100px) {
+  padding-bottom: $value;
+  @include respond-below(lg) {
+    padding-bottom: calc(#{$value}* 3 / 4);
+  }
+  @include respond-below(sm) {
+    padding-bottom: calc(#{$value}* 1 / 2);
+  }
+}
+@mixin margin-default($value: 100px) {
+  margin-top: $value;
+  margin-bottom: $value;
+  @include respond-below(lg) {
+    margin-top: calc(#{$value} * 3 / 4);
+    margin-bottom: calc(#{$value} * 3 / 4);
+  }
+  @include respond-below(sm) {
+    margin-top: calc(#{$value} * 1 / 2);
+    margin-bottom: calc(#{$value} * 1 / 2);
+  }
+}
+@mixin margin-top($value: 100px) {
+  margin-top: $value;
+  @include respond-below(lg) {
+    margin-top: calc(#{$value}* 3 / 4);
+  }
+  @include respond-below(sm) {
+    margin-top: calc(#{$value}* 1 / 2);
+  }
+}
+@mixin margin-bottom($value: 100px) {
+  margin-bottom: $value;
+  @include respond-below(lg) {
+    margin-bottom: calc(#{$value}* 3 / 4);
+  }
+  @include respond-below(sm) {
+    margin-bottom: calc(#{$value}* 1 / 2);
+  }
+}
