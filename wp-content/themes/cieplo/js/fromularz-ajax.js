@@ -48,6 +48,23 @@ jQuery(function($){
 	});
 });
 
+/** Funckja główna/ wyświtlanie/ wysyłający danych POST */
+jQuery(function($){
+	$('#search_city').on('click', function() {
+		var filter = $('input[name="city"]');
+		alert("klikniety oraz "+filter);
+		$.ajax({			
+			url:filter.attr('action'),
+			data:filter.serialize(), 
+			type:filter.attr('method'),
+			success:function(data){
+				$('#searched_cities').html(data);
+			}
+		});
+		return false;
+	});
+});
+
 /** Funkcja zmieniająca widok formularzu po kliknięciu w zakladki formularza */
 jQuery(function($){
 	var tabs = $('.tab_form').children('a');
