@@ -22,7 +22,5 @@ body.wc-lock-selected-block--remove .block-editor-block-settings-menu__popover .
 }
 
 .wp-block-woocommerce-cart-order-summary-block .wc-block-components-totals-wrapper {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
-/*# sourceMappingURL=editor.css.map */

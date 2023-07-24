@@ -26,7 +26,25 @@
             display: block;
         }
         .button {
-            @include button;
+            @include button;  
+            &#search_city {
+                display: inline;  
+                width: 100%;
+            }  
+            &.next_form {
+                width: 10%;
+                float: right;
+            }              
+        }
+        .alert_form_field {
+            font-size: 12px;
+            line-height: 20px;
+            color: red;
+        }
+        #searched_cities {
+            li {
+                list-style-type: none;
+            }
         }
     }
 }

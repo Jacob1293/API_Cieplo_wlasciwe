@@ -20,9 +20,7 @@
 }
 
 .wc-block-price-filter__price-range-toggle > div {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
 }
 
 .wc-block-price-slider .components-placeholder__instructions {
@@ -59,4 +57,3 @@
   display: block;
   margin-bottom: 1em;
 }
-/*# sourceMappingURL=editor.css.map */

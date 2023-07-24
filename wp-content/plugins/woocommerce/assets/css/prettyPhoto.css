@@ -113,8 +113,7 @@
 div.pp_woocommerce .pp_content_container {
   background: #fff;
   border-radius: 3px;
-  -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.25);
-          box-shadow: 0 1px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 30px rgba(0, 0, 0, 0.25);
   padding: 20px 0;
   *zoom: 1;
 }
@@ -138,8 +137,7 @@ div.pp_woocommerce .pp_loaderIcon::before {
   margin-left: -0.5em;
   margin-top: -0.5em;
   content: "";
-  -webkit-animation: spin 1s ease-in-out infinite;
-          animation: spin 1s ease-in-out infinite;
+  animation: spin 1s ease-in-out infinite;
   background: url("../images/icons/loader.svg") center center;
   background-size: cover;
   line-height: 1;
@@ -155,8 +153,7 @@ div.pp_woocommerce div.ppt {
 div.pp_woocommerce .pp_gallery ul li a {
   border: 1px solid rgba(0, 0, 0, 0.5);
   background: #fff;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
   display: block;
 }
@@ -179,7 +176,6 @@ div.pp_woocommerce .pp_next::before {
   color: #fff !important;
   font-size: 16px !important;
   line-height: 1em;
-  -webkit-transition: all ease-in-out 0.2s;
   transition: all ease-in-out 0.2s;
   font-family: 'WooCommerce';
   content: '\e00b';
@@ -244,7 +240,6 @@ div.pp_woocommerce .pp_close {
   color: #fff !important;
   font-size: 16px !important;
   line-height: 1em;
-  -webkit-transition: all ease-in-out 0.2s;
   transition: all ease-in-out 0.2s;
   top: -0.5em;
   right: -0.5em;
@@ -278,7 +273,6 @@ div.pp_woocommerce .pp_arrow_next {
   color: #fff !important;
   font-size: 16px !important;
   line-height: 1em;
-  -webkit-transition: all ease-in-out 0.2s;
   transition: all ease-in-out 0.2s;
   position: relative;
   margin-top: -1px;
@@ -325,7 +319,6 @@ div.pp_woocommerce a.pp_contract {
   color: #fff !important;
   font-size: 16px !important;
   line-height: 1em;
-  -webkit-transition: all ease-in-out 0.2s;
   transition: all ease-in-out 0.2s;
   right: auto;
   left: -0.5em;
@@ -381,8 +374,7 @@ div.pp_woocommerce .pp_inline {
   div.pp_woocommerce {
     left: 5% !important;
     right: 5% !important;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 90% !important;
   }
   div.pp_woocommerce .pp_gallery,
@@ -733,4 +725,3 @@ div.ppt {
   margin: 0 0 5px 15px;
   z-index: 9999;
 }
-/*# sourceMappingURL=prettyPhoto.css.map */

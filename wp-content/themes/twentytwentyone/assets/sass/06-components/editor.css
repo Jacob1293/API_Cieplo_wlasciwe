@@ -19,8 +19,7 @@ body {
 }
 
 .wp-block a:hover {
-  -webkit-text-decoration-style: dotted;
-          text-decoration-style: dotted;
+  text-decoration-style: dotted;
 }
 
 .wp-block a:focus {
@@ -37,4 +36,3 @@ button,
 a {
   cursor: pointer;
 }
-/*# sourceMappingURL=editor.css.map */

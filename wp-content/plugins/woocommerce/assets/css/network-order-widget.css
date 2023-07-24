@@ -48,8 +48,6 @@
 }
 
 #woocommerce_network_orders .post-type-shop_order .woocommerce-network-order-table tbody td .order-status {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   padding: 0px 1em;
   line-height: 2.5em;
@@ -85,4 +83,3 @@
   background: #eba3a3;
   color: #761919;
 }
-/*# sourceMappingURL=network-order-widget.css.map */

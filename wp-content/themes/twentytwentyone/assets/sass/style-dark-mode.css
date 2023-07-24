@@ -15,32 +15,22 @@
     --table--stripes-background-color: rgba(240, 240, 240, 0.15);
   }
   .is-dark-theme img {
-    -webkit-filter: brightness(0.85) contrast(1.1);
-            filter: brightness(0.85) contrast(1.1);
+    filter: brightness(0.85) contrast(1.1);
   }
   .respect-color-scheme-preference.is-dark-theme body {
     background-color: var(--global--color-background);
   }
   #dark-mode-toggler {
     cursor: pointer;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
     font-size: var(--global--font-size-xs);
     padding: 0.5em;
     min-height: 44px;
-    min-width: -webkit-max-content;
-    min-width: -moz-max-content;
     min-width: max-content;
     border: 2px solid currentColor;
-    -webkit-box-shadow: none;
-            box-shadow: none;
+    box-shadow: none;
     background: var(--button--color-text);
     color: var(--button--color-background);
     z-index: 9998;
@@ -101,8 +91,6 @@
 
 @media only screen and (prefers-reduced-motion: no-preference) {
   #dark-mode-toggler.fixed-bottom {
-    -webkit-transition: bottom 0.5s;
     transition: bottom 0.5s;
   }
 }
-/*# sourceMappingURL=style-dark-mode.css.map */

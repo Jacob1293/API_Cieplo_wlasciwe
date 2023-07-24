@@ -3,16 +3,9 @@
 }
 
 .wp-block-woocommerce-checkout .block-editor-block-list__layout {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-flow: row wrap;
+  align-items: flex-start;
   padding-left: 5px;
 }
 
@@ -73,7 +66,5 @@ body.wc-lock-selected-block--remove .block-editor-block-settings-menu__popover .
 }
 
 .wp-block-woocommerce-checkout-order-summary-block .wc-block-components-totals-wrapper {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
-/*# sourceMappingURL=editor.css.map */

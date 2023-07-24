@@ -261,8 +261,7 @@
 .woocommerce-page #content table.cart td.actions .coupon .button,
 .woocommerce-page #content table.cart td.actions .coupon .input-text {
   width: 48%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .woocommerce table.cart td.actions .coupon .input-text + .button,
@@ -311,8 +310,7 @@
 .woocommerce-page #payment #place_order {
   float: none;
   width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin-bottom: 1em;
 }
 
@@ -338,4 +336,3 @@
   padding-left: 20px !important;
   padding-right: 20px !important;
 }
-/*# sourceMappingURL=woocommerce-smallscreen.css.map */

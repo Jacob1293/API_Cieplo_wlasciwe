@@ -12,8 +12,7 @@
   font-size: 0.9em;
   padding: 2px 8px 2px 8px;
   display: inline-block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .dashboard-widget-finish-setup .progress-wrapper > span {
@@ -46,4 +45,3 @@
 .dashboard-widget-finish-setup .circle-progress .bar {
   stroke: #949494;
 }
-/*# sourceMappingURL=dashboard-setup.css.map */

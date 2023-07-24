@@ -10,6 +10,10 @@ class LocalFormHomeModel {
 
         private string $construction_type;
 
+        private float $latitude;
+        
+        private float $longitude;
+
 
 }
 

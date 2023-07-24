@@ -615,8 +615,7 @@
 
 .woocommerce form .form-row .input-text,
 .woocommerce-page form .form-row .input-text {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
 }
 
@@ -648,16 +647,9 @@
 
 .woocommerce form .password-input,
 .woocommerce-page form .password-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
   /* Hide the Edge "reveal password" native button */
 }
@@ -836,8 +828,7 @@
   padding-top: 7.6923%;
   margin-bottom: 7.6923%;
   background: #fff;
-  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
 }
 
 .twentyfifteen .t15wc .page-title {
@@ -914,4 +905,3 @@
 .rtl .woocommerce-page .col2-set .col-2 {
   float: left;
 }
-/*# sourceMappingURL=woocommerce-layout.css.map */
