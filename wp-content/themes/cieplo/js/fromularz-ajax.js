@@ -1,38 +1,3 @@
-/*
-jQuery(function($) {
-	$('.accept_form').on('click', function() {
-        var data = $('#form_cieplo').serializeArray(); // convert form to array
-        $.ajax({
-            //url: $('#form_cieplo').attr('action'),
-            method: "POST",
-            dataType: "html",
-            data: $.param(data),           
-            success: function (data) {
-                $('.wynik').html(data);
-            }            
-        })               
-    });    
-}); 
-*/
-
-/**  
-jQuery(function($){
-	$('.get_form').on('click', function() {
-		var filter = $('.get_form');
-		$.ajax({
-			url:filter.attr('action'),
-			data:{name: "page"}, 
-			type:filter.attr('method'),
-			success:function(data){
-				$('.wynik').html(data);
-			}
-		});
-		return false;
-	});
-});
-*/
-
-
 /** Funckja główna/ wyświtlanie/ wysyłający danych POST */
 jQuery(function($){
 	$('.accept_form').on('click', function() {
@@ -104,14 +69,19 @@ jQuery(function($){
 jQuery(function($){
 	var next = $('.next_form');
     next.on('click', function() { 
+		/** pobieranie wartości z atrybutu numb kliknętego przycisku */
 		var numbNextButton = $(this).attr('numb');
+		/** wywołanie własnej utwrzonej funkcji i sprawdzenie warunku */
 		if($.fn.validationForm(numbNextButton) == 1) {
+			/** Usunięcie elementu */
 			$('span.alert_form_field').remove();
 			var tabs = $('.tab_form').children('a');
 			var activTab = parseInt($('.tab_form').children('a[show="true"]').attr('numb'));
+			/** przypisanie do zmiennej pobranej wcześnie zmienną zwiększoną o 1 */
 			var newTabNumb = activTab+1;	
 			tabs.removeAttr("show");
 			var nextTab = $('.tab_form').children('a[numb="'+newTabNumb+'"]');
+			/** do zmiennej dodaj atrubut show="true" */
 			nextTab.attr("show","true");
 			$('.formularz_box').children('.tab').removeClass('show');
 			var newFormNumber = nextTab.attr('id');
