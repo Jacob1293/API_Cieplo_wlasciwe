@@ -20,6 +20,7 @@
 <script src="<?php bloginfo('stylesheet_directory'); ?>/js/cookie.js"></script>
 <script src="<?php bloginfo('stylesheet_directory'); ?>/js/main.js"></script>
 
+
 <!-- swiper -->
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/dist/css/swiper.min.css">
 <script type='text/javascript' src="<?php bloginfo('stylesheet_directory'); ?>/dist/js/swiper.js"></script>

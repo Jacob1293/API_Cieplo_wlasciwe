@@ -14,6 +14,26 @@ jQuery(function($){
 	});
 });
 
+/*
+jQuery(function($){
+	$('.accept_form_cookies').on('click', function() {
+		var filter = $('#form_cieplo_cookies');
+		$.ajax({
+			url:filter.attr('action'),
+			data:filter.serialize(), 
+			type:filter.attr('method'),
+			xhrFields: {
+				withCredentials: true
+			},
+			success:function(data){
+				$('#form_cieplo_cookies').html(data);
+			}
+		});
+		return false;
+	});
+});
+*/
+
 /** Funckja ściągająca po API nazwy miast pasujących do wyszukiwanej frazy */
 jQuery(function($){
 	$('#search_city').on('click', function() {
@@ -30,6 +50,7 @@ jQuery(function($){
 		return false;
 	});
 });
+
 
 /** Funkcja zmieniająca widok formularzu po kliknięciu w zakladki formularza */
 jQuery(function($){
@@ -68,7 +89,7 @@ jQuery(function($){
 /** Funkcja zmieniająca widok formularzu po kliknięciu w przycisk dalej */
 jQuery(function($){
 	var next = $('.next_form');
-    next.on('click', function() { 
+    next.on('click', function() { 		
 		/** pobieranie wartości z atrybutu numb kliknętego przycisku */
 		var numbNextButton = $(this).attr('numb');
 		/** wywołanie własnej utwrzonej funkcji i sprawdzenie warunku */
@@ -92,14 +113,80 @@ jQuery(function($){
     });
 });
 
-
+/** odznaczenie wszystkich radio po przeładowaniu strony */
 jQuery(function($){
 	$( document ).ready(function() {
-		$("input:radio").attr("checked", false);
+		$("input[name='building_type']:radio").attr("checked", false);
 	})
 }),
 
+/** Weryfikacja zmiany / zaznaczenie typu budynku */
+jQuery(function($){ 
+	var radioBuildingType = $('input[name="building_type"]');
+	var radioShapeArea = $('input[name="building_shape"]');
+	var radioSizeArea = $('input[name="building_area_size_option"]');	
+	radioBuildingType.on("change", function() {		
+		var radioBuildingTypeChecked = $('input[name="building_type"]:checked').val();		
+		if(radioBuildingTypeChecked==='apartment') {
+			alert(radioBuildingTypeChecked);
+			$('*[building="apartment"]').css({"display":"block"});
+			$('*[building="not_apartment"]').css({"display":"none"});
+		} else {
+			$('*[building="apartment"]').css({"display":"none"});
+			$('*[building="not_apartment"]').css({"display":"block"});
+		}
+	});
+	radioShapeArea.on("change", function() {	
+		var radioSizeAreaChecked = $('input[name="building_shape"]:checked').val();			
+		if(radioSizeAreaChecked==='regular') {
+			$('*[optionshape="building_shape_regular"]').css({"display":"block"});
+		} else {
+			$('*[optionshape="building_shape_regular"]').css({"display":"none"});
+			$('*[optionsize="building_area_size_wall"]').css({"display":"none"});
+			$('*[optionsize="building_area_size_area"]').css({"display":"block"});
+		}
+	});
+	radioSizeArea.on("change", function() {	
+		var radioSizeAreaChecked = $('input[name="building_area_size_option"]:checked').val();			
+		if(radioSizeAreaChecked==='size_area') {
+			$('*[optionsize="building_area_size_wall"]').css({"display":"none"});
+			$('*[optionsize="building_area_size_area"]').css({"display":"block"});
+		} else {
+			$('*[optionsize="building_area_size_wall"]').css({"display":"block"});
+			$('*[optionsize="building_area_size_area"]').css({"display":"none"});
+		}
+	});
+})
 
+/** Checkbox : change */
+jQuery(function($){ 
+	var checkboxChecked = $('input[type="checkbox"]');
+	checkboxChecked.on("change", function() {	
+		var whichCheck = $(this).attr('id');
+		var whichCheckStatus = $(this).is(':checked');
+		alert(whichCheck+" ma status "+whichCheckStatus);
+	})
+})
+
+/** Select : change */
+jQuery(function($){ 
+	var select = $('select', '.tab');
+	select.on("change", function() {	
+		var whichSelect = $(this).attr('id');	
+		var selectedValue = $(this).val();	
+		if(whichSelect === 'building_floors') {			
+			$('#div_form_3_building_heated_floors > #building_floors_selected').css( {"display":"none"} );
+			for (let i = 3; i >= selectedValue; i--) {
+				$('#building_floors_selected[value="'+i+'"]').css({"display":"none"});
+			}		
+			for (let i = 1; i <= selectedValue; i++) {
+				$('#building_floors_selected[value="'+i+'"]').css({"display":"block"});
+			}			
+		}
+	})
+})
+
+/** Funkcja do walidacji */
 $.fn.validationForm = function (numbNextButton) {
 	/** div_form_1 */
 	var checkedRadioBuilding = $('input[type="radio"]:checked', '#div_form_'+numbNextButton+'_building', '.tab_'+numbNextButton).val();
@@ -107,7 +194,7 @@ $.fn.validationForm = function (numbNextButton) {
 		$radioBuilding = 1;
 	} else {
 		$radioBuilding = 0;
-		$('#div_form_1_building').prev('span.alert_form_field').remove().end().before('<span class="alert_form_field">*Proszę zaznaczyć budynek</span>');
+		$('#div_form_1_building').prev('span.alert_form_field').remove().end().before('<span class="col-sm-12 alert_form_field">*Proszę zaznaczyć budynek</span>');
 	}
 	/** div_form_2 */
 	var checkedRadioLocalization = $('input[type="radio"]:checked', '#searched_cities','#div_form_'+numbNextButton+'_localization', '.tab_'+numbNextButton).val();
@@ -115,7 +202,7 @@ $.fn.validationForm = function (numbNextButton) {
 		$radioLocalization = 1;
 	} else {
 		$radioLocalization = 0;
-		$('#div_form_2_localization').prev('span.alert_form_field').remove().end().before('<span class="alert_form_field">*Proszę wybrać lokalizację</span>');
+		$('#div_form_2_localization').prev('span.alert_form_field').remove().end().before('<span class="col-sm-12 alert_form_field">*Proszę wybrać lokalizację</span>');
 	}
 	/** sprawdzanie czy można przejść dalej */
 	if(($radioBuilding === 1) || ($radioLocalization === 1)) {
@@ -125,3 +212,4 @@ $.fn.validationForm = function (numbNextButton) {
 	}	
 	return $true;
 }
+

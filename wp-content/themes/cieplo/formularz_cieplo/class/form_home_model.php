@@ -25,6 +25,9 @@ class LocalFormHomeModel {
         /** Kształt obrysu ścian zewnętrznych budynku */
         private string $buildingShape;
 
+        /** Jakie wymiary zostana podane */
+        private bool $typAreaSize;
+
         /*** Jeśli buildingShape == 'regular' */
         /**** Długość obrysu budynku (M) */
         private float $buildingLength;
@@ -78,6 +81,8 @@ class LocalFormHomeModel {
         private string $secondaryWallMaterial;
 
         /*** Jeśli constructionType == 'canadian' */
+        private bool $internalWallIsolatio;
+
         /**** Materiał wewnętrznej warstwy izolacji w ścianie zewnętrznej */
         private string $internalWallIsolationMaterial;
 
@@ -85,17 +90,22 @@ class LocalFormHomeModel {
         private int $internalWallIsolationSize;
 
         /** Opcjonalnie: jeśli zewnętrzne ocieplenie */ 
+        private bool $externalWallIsolation;
+
         /*** Materiał zewnętrznego docieplenia ścian zewnętrznych */
         private string $externalWallIsolationMaterial;
 
         /*** Grubość zewnętrznego docieplenia ścian zewnętrznych */
         private string $externalWallIsolationSize;
 
+        /** Rodzaj drzwi zewnętrznych */      
+        private string $doorsType;
+
         /** Liczba drzwi zewnętrznych w budynku */
         private int $numberDoors;
 
-        /** Liczba drzwi balkonowych w budynku */
-        private int $numberBalconyDoors;
+        /** Rodzaj okien */
+        private string $windowsType;
 
         /** Liczba okien w budynku */
         private int $numberWindows;
@@ -103,9 +113,71 @@ class LocalFormHomeModel {
         /** Liczba dużych przeszkleń w budynku */
         private int $numberHugeWindows;
 
-        /** Rodzaj drzwi zewnętrznych */      
-        private string $doorsType;
+        /** Liczba drzwi balkonowych w budynku */
+        private int $numberBalconyDoors;
 
+        /* Poddasze i parter */
+
+        /** Opcjonalnie jeśli daliśmy że dach jest nieogrzewany */
+        /*** Jak wygląda sytuacja na nieogrewanym poddaszu */
+        private string $topSituation;
+
+        /** Czy jest izolacja dachu */
+        private bool $topIsolation;
+
+        /** Materiał docieplenia przestrzeni ogrzewanej od góry */
+        private string $topIsolationMaterial;
+
+        /** Grubość docieplenia */
+        private int $topIsolationSize;
+
+        /** Czy jest izolacja piwnicy */
+        private bool $bottomIsolation;
+
+        /** Materiał docieplenia przestrzeni ogrzewanej oddołu */
+        private bool $bottomIsolationMaterial;
+
+        /** Grubość docieplenia */
+        private bool $bottomIsolationSize;
+
+        /** Jeśli wybrano typ budynku mieszkanie */
+        /*** Co znajduje się powyżej mieszkania */
+        private string $whatsOver;
+
+        /*** Co znajduje się poniżej mieszkania */
+        private string $whatsUnder; 
+
+        /*** Co znajduje się w sąsiedztwie mieszkania ściana północna */
+        private string $whatsNorth; 
+
+        /*** Co znajduje się w sąsiedztwie mieszkania ściana wschodnia */
+        private string $whatsEast;
+
+        /*** Co znajduje się w sąsiedztwie mieszkania ściana południowa */
+        private string $whatsSouth;
+        
+        /*** Co znajduje się w sąsiedztwie mieszkania ściana zachodnia */
+        private string $whatsWest;
+
+        /* Ogrzewanie */
+
+        /** Główne źródło ciepła */
+        private string $mainHeatingDevice;
+
+        /** Średnia dobowa temperatura w pomieszczeniach ogrzewanych zimą. */
+        private float $indoorTemperature;
+
+        /** Rodzaj wentylacji */
+        private string $ventilationType;
+
+        /** Czy wyliczamy dodatkową moc na potrzeby podgrzewania ciepłej wody użytkowej */
+        private bool $includeHotWater;
+
+        /*** Liczba osób korzystających z ciepłej wody użytkowej */
+        private int $hotWaterPersons;
+
+        /*** Intensywność wykorzystania ciepłej wody użytkowej  */
+        private string $hotWaterUsage;
 
 }
 

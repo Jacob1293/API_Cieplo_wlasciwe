@@ -1,3 +1,7 @@
+<?
+//setcookie('Cieplo_wlasciwe', '1011', time()+120);
+//header('Location: '.dirname(__FILE__).'/header.php');
+?>
 <!doctype html> 
 <html lang="pl">
 <head>
@@ -8,25 +12,14 @@
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/scss/style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
    	<?php wp_head();?>
+       
 </head>
-
 <?php if ( is_front_page() ) { ?>
     <?php if( get_field('splash', get_option('page_on_front')) ): ?>
     <img id="splash" class="splash" src="<?php awesome_acf_responsive_image(get_field( 'splash', get_option('page_on_front')),'medium','1600px'); ?>">
     <?php endif;?>
 <?php }?>
-
-<body class="fade-out">
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41856700-56"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-41856700-56');
-</script>
+<body class="fade-out" style="opacity: 1;">
 
 <nav id="top" class="nav_top">
     <div class="container">

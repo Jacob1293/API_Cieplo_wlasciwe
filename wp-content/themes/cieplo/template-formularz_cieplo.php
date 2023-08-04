@@ -1,8 +1,11 @@
 <?php /* Template Name: Formularz_cieplo */ ?>
 <?
-require('./class/miasta.php');
+require(dirname(__FILE__).'/formularz_cieplo/class/miasta.php');
 
 use form\class\getApiCiti;
+
+## zmienne
+$homeDir = bloginfo('stylesheet_directory');
 
 ?>
 <?php get_header(); ?> 
@@ -38,8 +41,11 @@ if(isset($_POST['building_type'])) {
                         echo '<div id="tab_2" class="tab" numb="2">'; 
                             get_template_part('./formularz_cieplo/panels/panel-localization'); 
                         echo '</div>';
+                        echo '<div id="tab_3" class="tab" numb="3">'; 
+                            get_template_part('./formularz_cieplo/panels/panel-sizes'); 
+                        echo '</div>';
                     } else { 
-                        print 'Formularz dostepny tylko dla zalogowanych użytkowników. <a href="#"> Zaloguj się </a> lub <a href="#"> zarejestruj </a> ';          
+                        print 'Formularz dostepny tylko dla zalogowanych użytkowników. <a href="'.$homeDir.'/Cieplo_wlasciwe/my-account"> Zaloguj się </a> lub <a href="#"> zarejestruj </a> ';          
                     }                      
                     ?>
                     <a class="accept_form">Zatwierdź</a> 

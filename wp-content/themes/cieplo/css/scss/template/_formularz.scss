@@ -1,5 +1,5 @@
-#Formularz {
-    @include grid;      
+@include bootstrap;
+#Formularz {   
     height: 100vh;
     .tab_form {        
         a {
@@ -20,10 +20,85 @@
             display: inline-block;
         }
         .tab {
-            display: none;
-        }
-        .show {
-            display: block;
+            display: none;            
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            &.show {
+                display: block;
+            }
+            .tab_div_form_half {
+                grid-column: span 6;
+                padding-bottom: 25px; 
+                display: grid;       
+                grid-template-columns: repeat(12, 1fr);   
+            }
+            .tab_div_form_full {
+                grid-column: span 12;
+                padding-bottom: 25px;
+            }
+            .tab_div_info {
+                grid-column: span 6;
+                padding-bottom: 25px;
+            }
+            .tab_div_button {
+                grid-column: span 12;
+                padding-bottom: 25px;
+            }          
+            span {                
+                padding-bottom: 10px;
+            }           
+            .label_checkbox {                
+                display: block;
+            }
+            .label_small_title {
+                font-size: 10px;
+                opacity: 70%; 
+                text-align: right;
+            }
+            select {               
+                border: 0;
+                background-image: linear-gradient(#009688,#009688),linear-gradient(#D2D2D2,#D2D2D2);
+                -webkit-background-size: 0 2px,100% 1px;
+                background-size: 0 2px,100% 1px;
+                background-repeat: no-repeat;
+                background-position: center bottom,center -webkit-calc(100% - 1px);
+                background-position: center bottom,center calc(100% - 1px);
+                background-color: rgba(0,0,0,0);
+                -webkit-transition: background 0s ease-out;
+                -o-transition: background 0s ease-out;
+                transition: background 0s ease-out;
+                float: none;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                border-radius: 0;            
+            }
+            input[type="text"] {
+                border: 0;
+                background-image: linear-gradient(#009688,#009688),linear-gradient(#D2D2D2,#D2D2D2);
+                -webkit-background-size: 0 2px,100% 1px;
+                background-size: 0 2px,100% 1px;
+                background-repeat: no-repeat;
+                background-position: center bottom,center -webkit-calc(100% - 1px);
+                background-position: center bottom,center calc(100% - 1px);
+                background-color: rgba(0,0,0,0);
+                -webkit-transition: background 0s ease-out;
+                -o-transition: background 0s ease-out;
+                transition: background 0s ease-out;
+                float: none;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                border-radius: 0; 
+            }
+            #searched_cities {
+                padding-top: 15px ;
+            }
+            div[building="apartment"] {
+                display: none;
+            }
+            .row {
+                padding-bottom: 25px;
+            }
         }
         .button {
             @include button;  
@@ -47,5 +122,189 @@
             }
         }
     }
+    
 }
 
+//cookies
+$cookies-white: white;
+$cookies-gray: #ccc;
+$cookies-black: black;
+$cookies-primary: #de5307;
+
+.cookies {
+    display: block;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    z-index: 999;
+    background-color: rgba($cookies-black, .9);
+    font-size: 13px;
+    line-height: 1.7;
+    color: $cookies-black;
+    h2 {
+        margin-bottom: 15px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    h3 {
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    p {
+        margin-bottom: 15px;
+    }
+    a {
+        color: $cookies-primary;
+        position: relative;
+        display: inline-block;
+        &::before {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            content: '';
+            display: block;
+            transition: 300ms;
+            background-color: $cookies-primary; 
+        }
+        &:hover {
+            &::before {
+                width: 0;
+            }
+        }
+    }
+    &-default,
+    &-advanced-settings {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        display: block;
+        width: calc(100% - 60px);
+        max-width: 500px;
+        height: 385px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background-color: $cookies-white;
+        padding: 30px;
+        @media(max-width:549px){
+            height: auto;
+            margin-top: 30px;
+            position: relative;
+        }
+    }
+    &-advanced-settings {
+        div {
+            label {
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                height: auto;
+                padding: 5px 0 10px 65px;
+                cursor: pointer;
+                margin-bottom: 15px;
+                input { 
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                    &:checked + .slider {
+                        background-color: $cookies-primary;
+                    }
+                    &:focus + .slider {
+                        box-shadow: 0 0 1px $cookies-primary;
+                    }
+                    &:checked + .slider:before {
+                        -webkit-transform: translateX(20px);
+                        -ms-transform: translateX(20px);
+                        transform: translateX(20px);
+                    }
+                }
+                .slider {
+                    position: absolute;
+                    width: 50px;
+                    height: 30px;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    background-color: $cookies-gray;
+                    -webkit-transition: 300ms;
+                    transition: 300ms;
+                    border-radius: 15px;
+                    -webkit-border-radius: 15px;
+                    -moz-border-radius: 15px;
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        height: 22px;
+                        width: 22px;
+                        left: 4px;
+                        bottom: 4px;
+                        background-color: $cookies-white;
+                        -webkit-transition: 300ms;
+                        transition: 300ms;
+                        border-radius: 50%;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+    &-buttons {
+        margin: -15px;
+        display: block;
+        overflow: hidden;
+        @media(max-width:549px){
+            margin: 0;
+        }
+        button {
+            display: inline-block;
+            width: auto;
+            height: auto;
+            padding: 12px 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+            border: solid 2px;
+            transition: 300ms;
+            cursor: pointer;
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            font-family: "Poppins", sans-serif;
+            margin: 15px;
+            @media(max-width:549px){
+                width: 100%; 
+                padding: 12px 15px;
+                margin: 0 0 15px 0;
+            }
+            &.cookies-close,
+            &.cookies-settings {
+                border-color: $cookies-primary;
+                background-color: transparent;
+                color: $cookies-primary;
+                &:hover {
+                    border-color: $cookies-black;
+                    color: $cookies-black;
+                }
+            }
+            &.cookies-accept,
+            &.cookies-accept-second {
+                border-color: $cookies-primary;
+                background-color: $cookies-primary;
+                color: $cookies-white;
+                &:hover {
+                    border-color: $cookies-primary;
+                    background-color: transparent;
+                    color: $cookies-primary;
+                }
+            }
+        }
+    }
+}

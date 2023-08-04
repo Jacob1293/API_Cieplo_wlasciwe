@@ -65,4 +65,8 @@ function awesome_acf_responsive_image($image_id,$image_size,$max_width){
 
 	}
 }
+
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}
 ?>
