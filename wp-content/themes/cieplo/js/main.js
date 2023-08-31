@@ -1,4 +1,4 @@
-$(document).ready(function () {
+jQuery(document).ready(function () {
     setTimeout(function() {
         $('#splash').fadeOut(500);
     }, 3000); 

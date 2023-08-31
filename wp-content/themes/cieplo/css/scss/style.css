@@ -1373,7 +1373,7 @@ body {
 }
 
 #Formularz {
-  height: 100vh;
+  height: 100%;
 }
 
 #Formularz .tab_form a {
@@ -1470,6 +1470,19 @@ body {
   border-radius: 0;
 }
 
+#Formularz .formularz_box .tab input[type="number"] {
+  border: 0;
+  background-image: linear-gradient(#009688, #009688), linear-gradient(#D2D2D2, #D2D2D2);
+  background-size: 0 2px,100% 1px;
+  background-repeat: no-repeat;
+  background-position: center bottom, center calc(100% - 1px);
+  background-color: rgba(0, 0, 0, 0);
+  transition: background 0s ease-out;
+  float: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
 #Formularz .formularz_box .tab #searched_cities {
   padding-top: 15px;
 }
@@ -1480,6 +1493,10 @@ body {
 
 #Formularz .formularz_box .tab .row {
   padding-bottom: 25px;
+}
+
+#Formularz .formularz_box .tab .title_section_div_form {
+  font-size: 25px;
 }
 
 #Formularz .formularz_box .button {

@@ -65,6 +65,9 @@ class LocalFormHomeModel {
         /** Charakterystyka garażu w bryle budynku */
         private string $garageType;
 
+        /** Czy dom w zabudowie szeregowej jest na rogu */
+        private bool $onCorner;
+
         /* Ściany */
 
         /** Rodzaj konstrukcji budynku */        
@@ -81,16 +84,17 @@ class LocalFormHomeModel {
         private string $secondaryWallMaterial;
 
         /*** Jeśli constructionType == 'canadian' */
-        private bool $internalWallIsolatio;
+        private bool $hasInternalWallIsolatio;
 
         /**** Materiał wewnętrznej warstwy izolacji w ścianie zewnętrznej */
         private string $internalWallIsolationMaterial;
 
-        /**** Materiał wewnętrznej warstwy izolacji w ścianie zewnętrznej */
+        /**** Grubość wewnętrznej warstwy izolacji w ścianie zewnętrznej */
         private int $internalWallIsolationSize;
 
-        /** Opcjonalnie: jeśli zewnętrzne ocieplenie */ 
-        private bool $externalWallIsolation;
+        /*** Jeśli constructionType == 'canadian' */
+        private bool $hasExternalWallIsolation;
+
 
         /*** Materiał zewnętrznego docieplenia ścian zewnętrznych */
         private string $externalWallIsolationMaterial;
@@ -123,7 +127,7 @@ class LocalFormHomeModel {
         private string $topSituation;
 
         /** Czy jest izolacja dachu */
-        private bool $topIsolation;
+        private bool $hasTopIsolation;
 
         /** Materiał docieplenia przestrzeni ogrzewanej od góry */
         private string $topIsolationMaterial;
@@ -132,7 +136,7 @@ class LocalFormHomeModel {
         private int $topIsolationSize;
 
         /** Czy jest izolacja piwnicy */
-        private bool $bottomIsolation;
+        private bool $hasbottomIsolation;
 
         /** Materiał docieplenia przestrzeni ogrzewanej oddołu */
         private bool $bottomIsolationMaterial;

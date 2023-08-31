@@ -33,7 +33,10 @@ if(isset($_POST)) {
 
 $homePrepare->setParametersBuilding($arrayPostFields);
 
-print_r($homePrepare->parameters_parse_json()); 
+$homePreparedParameters = $homePrepare->parameters_parse_json();
+$json = json_encode($homePreparedParameters);
+
+print_r($json); 
         
 
             

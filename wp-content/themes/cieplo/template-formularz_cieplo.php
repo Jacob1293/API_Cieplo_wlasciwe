@@ -26,9 +26,12 @@ if(isset($_POST['building_type'])) {
         <div class="row">
             <h1> Znajdź sprzęt do sowjego ciepła </h1>
             <div class="tab_form">
-                <a id="tab_1" show="true" numb="1"><span></span>Miezkanie</a>
-                <a id="tab_2" numb="2"><span></span>Wymiar</a>
-                <a id="tab_3" numb="3"><span></span>Ściany</a>
+                <a id="tab_1" show="true" numb="1"><span></span>Budynek</a>
+                <a id="tab_2" numb="2"><span></span>Lokalizacja</a>
+                <a id="tab_3" numb="3"><span></span>Wymiary</a>
+                <a id="tab_4" numb="4"><span></span>Ściany</a>
+                <a id="tab_5" numb="5"><span></span>Ocieplenie</a>
+                <a id="tab_6" numb="6"><span></span>Ogrzewanie</a>
             </div>
             <?php global $current_user; wp_get_current_user(); ?>
             <form id="form_cieplo" method="POST" action="<?php bloginfo('stylesheet_directory'); ?>/formularz_cieplo/set_form_objects.php">
@@ -43,6 +46,15 @@ if(isset($_POST['building_type'])) {
                         echo '</div>';
                         echo '<div id="tab_3" class="tab" numb="3">'; 
                             get_template_part('./formularz_cieplo/panels/panel-sizes'); 
+                        echo '</div>';
+                        echo '<div id="tab_4" class="tab" numb="4">'; 
+                            get_template_part('./formularz_cieplo/panels/panel-wall'); 
+                        echo '</div>';
+                        echo '<div id="tab_5" class="tab" numb="5">'; 
+                            get_template_part('./formularz_cieplo/panels/panel-attic-ground_floor'); 
+                        echo '</div>';
+                        echo '<div id="tab_6" class="tab" numb="6">'; 
+                            get_template_part('./formularz_cieplo/panels/panel-heating'); 
                         echo '</div>';
                     } else { 
                         print 'Formularz dostepny tylko dla zalogowanych użytkowników. <a href="'.$homeDir.'/Cieplo_wlasciwe/my-account"> Zaloguj się </a> lub <a href="#"> zarejestruj </a> ';          
