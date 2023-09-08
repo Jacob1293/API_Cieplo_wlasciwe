@@ -12,15 +12,6 @@ $homeDir = bloginfo('stylesheet_directory');
 
 <?php get_template_part('panel-simplebaner'); ?>
 
-<?
-if(isset($_POST['building_type'])) {
-    $building_type = $_POST('building_type');
-    echo  $building_type; 
-}
-    
-
-?>
-
 <section id="Formularz" class="section_formularz">
     <div class="container">
         <div class="row">

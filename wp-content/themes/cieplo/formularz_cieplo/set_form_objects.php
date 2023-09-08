@@ -2,16 +2,21 @@
 
 namespace form ;
 
-include_once('./class/form_home_prepare.php');
+include_once('./class/form/form_home_prepare.php');
+include_once('./class/API/get_summary_from_api.php');
+include_once('./class/DB/inserting_data_to_db.php');
 
-use form\class\FormHomePrepare;
+use form\class\form\FormHomePrepare;
+use form\class\API\GetSummaryApi;
+use form\class\DB\InsertDataToDB;
 
 ## Zmienne
 $arrayPostFields = array();
 
 ## Zapisywanie zmiennych do pól
 $homePrepare = new FormHomePrepare();
-
+$getSummaryApi = new GetSummaryApi();
+$insertDataToDb = new InsertDataToDB();
 /*
 if(isset($_POST['building_type'])) {
     $buildingType = $homePrepare->setParametersBuilding($_POST['building_type']);
@@ -36,15 +41,27 @@ $homePrepare->setParametersBuilding($arrayPostFields);
 $homePreparedParameters = $homePrepare->parameters_parse_json();
 $json = json_encode($homePreparedParameters);
 
-print_r($json); 
-        
-
-            
-  
-         
-                     
+echo '<div> <p>Wysłane dane to<p></br>'.$json.' </div>';
 
 
+
+$insertDataFromApi = $insertDataToDb->insertSummaryFromApi();
+
+echo "Czy połączono do DB:";
+
+print_r($insertDataFromApi);
+
+
+/*  
+## Pobranie danych z API
+$arrayGetSummaryApi = $getSummaryApi->getSummaryApi($json);
+
+echo '<div> <p>Zwrócony wynik to : <p></br>';
+print_r($arrayGetSummaryApi);
+echo' </div>';
+*/
+
+                    
 
 ?>
 

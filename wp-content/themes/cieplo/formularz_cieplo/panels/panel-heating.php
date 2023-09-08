@@ -5,7 +5,7 @@
     </div>
 </div>
 <!-- Główne źrodło ciepła -->
-<div class="row" building="not_apartment">
+<div class="row">
     <div id="div_form_6_main_heating_device" class="div_form_6 col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Główne źródło ciepła 
@@ -46,7 +46,7 @@
         </div>        
     </div>
 </div>
-<div class="row" building="not_apartment">
+<div class="row">
     <div id="div_form_6_ventilation_type" class="div_form_6 col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Rodzaj wentylacji 
@@ -61,7 +61,7 @@
     </div>
 </div>
 <!-- instalacja grzewcza -->
-<div class="row" building="not_apartment_hiden">
+<div class="row" building="not_apartment">
     <div class="div_form_title_subsection col-md-6">
         <p class="subsection_div_form"> Instalacja grzewcza</p>        
     </div>
@@ -91,7 +91,7 @@
         <p class="subsection_div_form"> Ciepła woda kranowa</p>        
     </div>
 </div>
-<div class="row" building="not_apartment">
+<div class="row">
     <div id="div_form_6_has_include_hot_water" class="div_form_6 col-md-6">
         <label for="has_include_hot_water" class="label_small_title col-sm-4">
             Oblicz zapotrzebowanie energii na podgrzewanie CWU
@@ -99,7 +99,7 @@
         <div class="col-sm-8">
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" id="has_include_hot_water" name="has_include_hot_water" value="1" data-gtm-form-interact-field-id="2">
+                    <input type="checkbox" id="has_include_hot_water" name="has_include_hot_water" value="true" data-gtm-form-interact-field-id="2">
                     <span class="checkbox-material">
                         <span class="check">
 
@@ -120,7 +120,7 @@
         </div>        
     </div>
 </div>
-<div class="row" building="not_apartment">
+<div class="row" >
     <div id="div_form_6_hot_water_use" class="div_form_6 col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Jak intensywnie używana jest ciepła woda? 

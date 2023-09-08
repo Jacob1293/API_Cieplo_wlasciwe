@@ -1,6 +1,6 @@
 <?php
 
-namespace form\class;
+namespace form\class\form;
 
 class LocalFormHomeModel {
 
@@ -175,7 +175,7 @@ class LocalFormHomeModel {
         private string $ventilationType;
 
         /** Czy wyliczamy dodatkową moc na potrzeby podgrzewania ciepłej wody użytkowej */
-        private bool $includeHotWater;
+        private bool $hasIncludeHotWater;
 
         /*** Liczba osób korzystających z ciepłej wody użytkowej */
         private int $hotWaterPersons;

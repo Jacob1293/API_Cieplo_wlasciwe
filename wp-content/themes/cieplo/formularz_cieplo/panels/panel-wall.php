@@ -4,7 +4,7 @@
         <p class="title_section_div_form"> Ściany zewnętrzne</p>
     </div>
 </div>
-<div class="row" building="not_apartment">
+<div class="row">
     <div id="div_form_4_construction_type" class="div_form_4 col-md-6" numb="4">
         <label class="label_small_title col-sm-4" for="">Rodzaj konstrukcji budynku: </label>
         <div class="div_checkbox col-sm-8">
@@ -44,7 +44,7 @@
         <p class="subsection_div_form"> Materiały</p>
     </div>
 </div>
-<div class="row" building="not_apartment">
+<div class="row">
     <div id="div_form_4_primary_wall_material" class="div_form_3 col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Podstawowy materiał 
@@ -92,7 +92,7 @@
         </div>
     </div>
 </div>
-<div class="row" building="not_apartment">
+<div class="row">
     <div id="div_form_4_secondary_wall_material" class="div_form_3 col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Dodatkowy materiał 
@@ -146,7 +146,7 @@
         <p class="subsection_div_form"> Izolacja wewnątrz ściany</p>
     </div>
 </div>
-<div class="row" building="not_apartment">
+<div class="row">
     <div id="div_form_4_has_internal_wall_isolation" class="div_form_4 col-md-6">
         <label for="has_internal_wall_isolation" class="label_small_title col-sm-4">
             Ściana ma izolację w środku
@@ -165,7 +165,7 @@
         </div>
     </div>
 </div>
-<div class="row" building="not_apartment">
+<div class="row">
     <div id="div_form_4_internal_wall_isolation_material" class="div_form_4 col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Izolacja wewnątrz ściany 
@@ -210,7 +210,7 @@
         <p class="subsection_div_form"> Docieplenie </p>
     </div>
 </div>
-<div class="row" building="not_apartment">
+<div class="row">
     <div id="div_form_4_has_external_wall_isolation" class="div_form_4 col-md-6">
         <label for="has_external_wall_isolation" class="label_small_title col-sm-4">
             Dom jest docieplony
@@ -229,7 +229,7 @@
         </div>
     </div>
 </div>
-<div class="row" building="not_apartment">
+<div class="row">
     <div id="div_form_4_external_wall_isolation_material" class="div_form_4 col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Docieplenie od zewnątrz
@@ -276,7 +276,7 @@
     </div>
 </div>
 <!-- all -->
-<div class="row" building="not_apartment">
+<div class="row">
     <div id="div_form_4_windows_type" class="div_form_4 col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Rodzaj okien
@@ -333,7 +333,7 @@
     </div>
 </div>
 <!-- all -->
-<div class="row" building="not_apartment">
+<div class="row">
     <div id="div_form_4_doors_type" class="div_form_4 col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Rodzaj drzwi zewnętrznych 

@@ -1,10 +1,10 @@
 <?php
 
-namespace form\class;
+namespace form\class\form;
 
 require('form_home_model.php');
 
-use form\class\LocalFormHomeModel;
+use form\class\form\LocalFormHomeModel;
 
 class FormHomePrepare extends LocalFormHomeModel {
     public $buildingType;
@@ -61,6 +61,14 @@ class FormHomePrepare extends LocalFormHomeModel {
     public $whatsEast;
     public $whatsSouth;
     public $whatsWest;
+    // Ogrzewanie
+    public $mainHeatingDevice;
+    public $indoorTemperature;
+    public $ventilationType;
+    public $hasIncludeHotWater;
+    public $hotWaterPersons;
+    public $hotWaterUsage;
+
 
 
     public function setParametersBuilding($arrayFieldsForm ) {
@@ -210,6 +218,24 @@ class FormHomePrepare extends LocalFormHomeModel {
                 case 'whats_west':
                     $this->whatsWest = $valField;
                     break;
+                case 'main_heating_device':
+                    $this->mainHeatingDevice = $valField;
+                    break;
+                case 'indoor_temperature':
+                    $this->indoorTemperature = $valField;
+                    break;
+                 case 'ventilation_type':
+                    $this->ventilationType = $valField;
+                    break;
+                case 'has_include_hot_water':
+                    $this->hasIncludeHotWater = $valField;
+                    break;
+                case 'hot_water_persons':
+                    $this->hotWaterPersons = $valField;
+                    break;
+                case 'hot_water_use':
+                    $this->hotWaterUsage = $valField;
+                    break;                    
             }
         }
     }
@@ -271,16 +297,22 @@ class FormHomePrepare extends LocalFormHomeModel {
         }
 
         ## Dodanie kolejnych pozycji do tablicy json
+        if($this->buildingRoof) {
+            null;
+        } else {
+            $this->buildingRoof = 'flat';
+        }
+
         $arrayFields += array(              
             'building_floors'=> $this->buildingFloors,
             'building_heated_floors'=> $this->buildingHeatedFloors,
             'floor_height'=> $this->floorHeight, 
+            'building_roof'=> $this->buildingRoof, 
         );
 
         ## Dodanie kolejnych pozycji do tablicy json
         if($this->buildingType != 'apartment') {
-            $arrayFields += array(                                   
-                'building_roof'=> $this->buildingRoof,                
+            $arrayFields += array(                                                                  
                 'has_basement'=> $this->hasBasement,
                 'has_balcony'=> $this->hasBalcony,
                 'garage_type'=> $this->garageType,
@@ -310,14 +342,14 @@ class FormHomePrepare extends LocalFormHomeModel {
         }
 
         ## Czy ściana ma izolację w środku
-        if($this->constructionType === 'canadian' && $this->hasInternalWallIsolation == 1) {
+        if(($this->constructionType === 'canadian' ||  $this->constructionType === 'traditional')&& $this->hasInternalWallIsolation == 1) {
             $arrayFields += array(  
                 'internal_wall_isolation'=> array('material'=>$this->internalWallIsolationMaterial, 'size'=>$this->internalWallIsolationSize),               
             );
         }
 
         ## Czy dom jest docieplony
-        if($this->constructionType === 'canadian' && $this->hasExternalWallIsolation == 1) {
+        if(($this->constructionType === 'canadian' ||  $this->constructionType === 'traditional') && $this->hasExternalWallIsolation == 1) {
             $arrayFields += array(  
                 'external_wall_isolation'=> array('material'=>$this->internalWallIsolationMaterial, 'size'=>$this->internalWallIsolationSize),               
             );
@@ -330,6 +362,7 @@ class FormHomePrepare extends LocalFormHomeModel {
             'number_balcony_doors'=> $this->numberBalconyDoors,
             'number_huge_windows'=> $this->numberHugeWindows,
             'doors_type'=> $this->doorsType,
+            'number_doors'=>$this->numberDoors,
         );
 
         ### Ocieplenie
@@ -370,8 +403,19 @@ class FormHomePrepare extends LocalFormHomeModel {
             }
         }
 
-        
+        ### Ogrzewanie budynku
+        $arrayFields += array(                                   
+            'main_heating_device'=> $this->mainHeatingDevice,
+            'indoor_temperature' => $this->indoorTemperature,          
+            'ventilation_type' => $this->ventilationType,
+        );
 
+        if($this->hasIncludeHotWater === 'true') {
+            $arrayFields += array(                                   
+                'hot_water_persons'=> $this->hotWaterPersons,
+                'hot_water_use' => $this->hotWaterUsage,          
+            );
+        }
 
         return $arrayFields;
     }

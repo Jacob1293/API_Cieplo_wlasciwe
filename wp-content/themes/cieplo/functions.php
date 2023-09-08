@@ -69,4 +69,49 @@ function awesome_acf_responsive_image($image_id,$image_size,$max_width){
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
 }
+
+
+// 1. Register new endpoint to use for My Account page
+// Note: Resave Permalinks or it will give 404 error
+
+function bbloomer_add_wishlist_endpoint() {
+add_rewrite_endpoint( 'wishlist', EP_ROOT | EP_PAGES );
+}
+
+add_action( 'init', 'bbloomer_add_wishlist_endpoint' );
+
+
+// ------------------
+// 2. Add new query var
+
+function bbloomer_wishlist_query_vars( $vars ) {
+$vars[] = 'wishlist';
+return $vars;
+}
+
+add_filter( 'query_vars', 'bbloomer_wishlist_query_vars', 0 );
+
+
+// ------------------
+// 3. Insert the new endpoint into the My Account menu
+
+function bbloomer_add_wishlist_link_my_account( $items ) {
+$items['wishlist'] = 'Wishlist';
+return $items;
+}
+
+add_filter( 'woocommerce_account_menu_items', 
+'bbloomer_add_wishlist_link_my_account' );
+
+
+ // ------------------
+// 4. Add content to the new endpoint
+
+function bbloomer_wishlist_content() {
+echo do_shortcode( ' [yith_wcwl_wishlist] ' );
+}
+
+add_action( 'woocommerce_account_wishlist_endpoint', 'bbloomer_wishlist_content' );
+// Note: add_action must follow 'woocommerce_account_{your-endpoint-slug}_endpoint' format
+
 ?>
