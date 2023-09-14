@@ -39,12 +39,12 @@
         </div>        
     </div>
 </div>
-<div class="row" building="not_apartment_hiden">
+<div class="row" construction="traditional">
     <div class="div_form_itle_subsection col-md-6">
         <p class="subsection_div_form"> Materiały</p>
     </div>
 </div>
-<div class="row">
+<div class="row" construction="traditional">
     <div id="div_form_4_primary_wall_material" class="div_form_3 col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Podstawowy materiał 
@@ -92,7 +92,7 @@
         </div>
     </div>
 </div>
-<div class="row">
+<div class="row" construction="traditional">
     <div id="div_form_4_secondary_wall_material" class="div_form_3 col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Dodatkowy materiał 
@@ -194,7 +194,7 @@
     </div>
 </div>
 <div class="row" building="not_apartment_hiden">
-    <div class="div_form_4_internal_wall_isolation_size col-md-6">
+    <div id="div_form_4_internal_wall_isolation_size" class="col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Grubość
         </label>
@@ -362,5 +362,5 @@
     </div>
 </div>
 <div class="tab_div_button"> 
-    <a numb="3" class="button next_form">Dalej</a>
+    <a numb="4" class="button next_form">Dalej</a>
 </div>

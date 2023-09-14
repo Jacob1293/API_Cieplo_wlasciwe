@@ -1,5 +1,5 @@
 <?php
-namespace form\class\API;
+namespace form\formCieplo\class\API;
 
 $path = preg_replace( '/wp-content.*$/', '', __DIR__ );
 

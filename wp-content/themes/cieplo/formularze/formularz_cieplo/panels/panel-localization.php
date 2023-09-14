@@ -19,11 +19,11 @@
 <div id="div_form_2_localization" class="div_form_2 tab_div_form_full" numb="2">
     <p>Lokalizacja</p>
     <label class="label_small_title" for="localization">Proszę podać przybliżoną lokalizację</label>
-    <input method="POST" action="<?php bloginfo('stylesheet_directory'); ?>/formularz_cieplo/class/miasta.php" type="text" name="city" list="cityname"><a id="search_city" class="button">Szukaj</a>
+    <input method="POST" action="<?php bloginfo('stylesheet_directory'); ?>/formularze/formularz_cieplo/class/miasta.php" type="text" name="city" list="cityname"><a id="search_city" class="button">Szukaj</a>
        <div id='searched_cities'>
 
        </div>
 </div>
 <div class="tab_div_button"> 
-    <a numb="2" action="<?php echo bloginfo('stylesheet_directory'); ?>/formularz_cieplo/panels/panel-sizes.php" method="GET" class="button next_form">Dalej</a>
+    <a numb="2" action="<?php echo bloginfo('stylesheet_directory'); ?>/formularze/formularz_cieplo/panels/panel-sizes.php" method="GET" class="button next_form">Dalej</a>
 </div>

@@ -1,4 +1,7 @@
 <?php
+
+include('/user_summary.php');
+
 add_filter('show_admin_bar', '__return_false');
 
 function register_my_menu() {
@@ -74,44 +77,62 @@ if( function_exists('acf_add_options_page') ) {
 // 1. Register new endpoint to use for My Account page
 // Note: Resave Permalinks or it will give 404 error
 
-function bbloomer_add_wishlist_endpoint() {
-add_rewrite_endpoint( 'wishlist', EP_ROOT | EP_PAGES );
+function add_summary_endpoint() {
+add_rewrite_endpoint( 'wyniki', EP_ROOT | EP_PAGES );
 }
 
-add_action( 'init', 'bbloomer_add_wishlist_endpoint' );
+add_action( 'init', 'add_summary_endpoint' );
 
 
 // ------------------
 // 2. Add new query var
 
-function bbloomer_wishlist_query_vars( $vars ) {
-$vars[] = 'wishlist';
+function summary_query_vars( $vars ) {
+$vars[] = 'wyniki';
 return $vars;
 }
 
-add_filter( 'query_vars', 'bbloomer_wishlist_query_vars', 0 );
+add_filter( 'query_vars', 'summary_query_vars', 0 );
 
 
 // ------------------
 // 3. Insert the new endpoint into the My Account menu
 
-function bbloomer_add_wishlist_link_my_account( $items ) {
-$items['wishlist'] = 'Wishlist';
+function add_summary_link_my_account( $items ) {
+$items['wyniki'] = 'Wyniki';
 return $items;
 }
 
 add_filter( 'woocommerce_account_menu_items', 
-'bbloomer_add_wishlist_link_my_account' );
+'add_summary_link_my_account' );
 
 
  // ------------------
 // 4. Add content to the new endpoint
 
-function bbloomer_wishlist_content() {
-echo do_shortcode( ' [yith_wcwl_wishlist] ' );
+function shortcode_name(){
+    ob_start();
+    require_once ( plugin_dir_path(__FILE__) . '/user_summary.php');
+    $content = ob_get_clean();
+    return $content;
+};
+
+add_shortcode('summary_form', 'shortcode_name');
+
+function summary_content() {
+echo do_shortcode( ' [summary_form] ' );
 }
 
-add_action( 'woocommerce_account_wishlist_endpoint', 'bbloomer_wishlist_content' );
+add_action( 'woocommerce_account_wyniki_endpoint', 'summary_content' );
 // Note: add_action must follow 'woocommerce_account_{your-endpoint-slug}_endpoint' format
+
+function PREFIX_add_query_vars($aVars) {
+	$aVars[] = "summary_id"; 
+	
+	return $aVars;
+  }
+	
+// hook PREFIX_add_query_vars function into query_vars
+add_filter('query_vars', 'PREFIX_add_query_vars');
 
 ?>

@@ -1,14 +1,14 @@
 <?php 
 
-namespace form ;
+namespace form\formCieplo;
 
 include_once('./class/form/form_home_prepare.php');
 include_once('./class/API/get_summary_from_api.php');
-include_once('./class/DB/inserting_data_to_db.php');
+include_once('./class/DB/inserting.php');
 
-use form\class\form\FormHomePrepare;
-use form\class\API\GetSummaryApi;
-use form\class\DB\InsertDataToDB;
+use form\formCieplo\class\form\FormHomePrepare;
+use form\formCieplo\class\API\GetSummaryApi;
+use form\formCieplo\class\DB\InsertDataToDB;
 
 ## Zmienne
 $arrayPostFields = array();
@@ -38,7 +38,7 @@ if(isset($_POST)) {
 
 $homePrepare->setParametersBuilding($arrayPostFields);
 
-$homePreparedParameters = $homePrepare->parameters_parse_json();
+$homePreparedParameters = $homePrepare->parametersParseJson();
 $json = json_encode($homePreparedParameters);
 
 echo '<div> <p>Wysłane dane to<p></br>'.$json.' </div>';

@@ -125,6 +125,7 @@ jQuery(function($){
 	var radioBuildingType = $('input[name="building_type"]');
 	var radioShapeArea = $('input[name="building_shape"]');
 	var radioSizeArea = $('input[name="building_area_size_option"]');	
+	var radioConstructionType = $('input[name="construction_type"]');
 	radioBuildingType.on("change", function() {		
 		var radioBuildingTypeChecked = $('input[name="building_type"]:checked').val();		
 		if(radioBuildingTypeChecked==='apartment') {
@@ -171,6 +172,14 @@ jQuery(function($){
 		} else {
 			$('*[optionsize="building_area_size_wall"]').css({"display":"block"});
 			$('*[optionsize="building_area_size_area"]').css({"display":"none"});
+		}
+	});
+	radioConstructionType.on("change", function() {
+		var radioConstructionTypeChecked = $('input[name="construction_type"]:checked').val();	
+		if(radioConstructionTypeChecked === 'traditional') {
+			$('*[construction="traditional"]').css({"display":"block"});
+		} else {
+			$('*[construction="traditional"]').css({"display":"none"});
 		}
 	});
 })
@@ -290,6 +299,48 @@ $.fn.validationForm = function (numbNextButton) {
 				$true = 0;
 			}	
 		}
+	}	
+	/** div_form_4 */
+	if(numbNextButton == 4 ) {
+		var checkedRadioConstructionType = $('input[type="radio"]:checked', '#div_form_'+numbNextButton+'_construction_type', '.tab_'+numbNextButton).val();
+		if(checkedRadioConstructionType == "traditional") {
+			var selectedPrimaryWallMaterial = $('select','#div_form_'+numbNextButton+'_primary_wall_material', '.tab_'+numbNextButton).val();
+			var selectedSecondaryWallMaterial = $('select','#div_form_'+numbNextButton+'_secondary_wall_material', '.tab_'+numbNextButton).val();
+			if(selectedPrimaryWallMaterial != "") {
+				$selectPrimaryWallMaterial = 1;
+			} else {
+				$selectPrimaryWallMaterial = 0;
+				$('#div_form_4_primary_wall_material').prev('span.alert_form_field').remove().end().before('<span class="col-sm-12 alert_form_field">*Proszę wybrać materiał</span>');
+			}
+			if(selectedSecondaryWallMaterial != "") {
+				$selectSecondaryWallMaterial = 1;
+			} else {
+				$selectSecondaryWallMaterial = 0;
+				$('#div_form_4_secondary_wall_material').prev('span.alert_form_field').remove().end().before('<span class="col-sm-12 alert_form_field">*Proszę wybrać materiał</span>');
+			}		
+		}
+		var checkedCheckboxInternalWallIsolation = $('input[type="checkbox"]:checked', '#div_form_'+numbNextButton+'_has_internal_wall_isolation', '.tab_'+numbNextButton).val();
+		if(checkedCheckboxInternalWallIsolation == "1") {
+			var selectedInternalWallIsolationMaterial = $('select','#div_form_'+numbNextButton+'_internal_wall_isolation_material', '.tab_'+numbNextButton).val();
+			var inputTextInternalWallIsolationSizeLength = $('input[type="text"]','#div_form_'+numbNextButton+'_internal_wall_isolation_size', '.tab_'+numbNextButton).val().length;
+			if(selectedInternalWallIsolationMaterial != "") {
+				$selectInternalWallIsolationMaterial = 1;
+			} else {
+				$selectInternalWallIsolationMaterial = 0;
+				$('#div_form_4_internal_wall_isolation_material').prev('span.alert_form_field').remove().end().before('<span class="col-sm-12 alert_form_field">*Proszę wybrać materiał</span>');
+			}
+			if(inputTextInternalWallIsolationSizeLength > 0) {
+				$textInternalWallIsolationSize = 1;
+			} else {
+				$textInternalWallIsolationSize = 0;
+				$('#div_form_4_internal_wall_isolation_size').prev('span.alert_form_field').remove().end().before('<span class="col-sm-12 alert_form_field">*Proszę wybrać materiał</span>');
+			}		
+		}
+		if(($selectInternalWallIsolationMaterial === 1 && $textInternalWallIsolationSize === 1 && $selectSecondaryWallMaterial === 1 && $selectPrimaryWallMaterial === 1)) {
+			$true = 1;
+		} else {
+			$true = 0;
+		}	
 	}	
 
 	/** sprawdzanie czy można przejść dalej */

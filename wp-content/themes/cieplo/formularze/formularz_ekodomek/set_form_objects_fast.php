@@ -1,10 +1,10 @@
 <?php 
 
-namespace form ;
+namespace form\formEko ;
 
-include_once('./class/fast_form_home_prepare.php');
+//include_once('./class/fast_form_home_prepare.php');
 
-use form\class\FastFormHomePrepare;
+use form\formEko\class\FastFormHomePrepare;
 
 ## Zmienne
 $arrayPostFields = array();

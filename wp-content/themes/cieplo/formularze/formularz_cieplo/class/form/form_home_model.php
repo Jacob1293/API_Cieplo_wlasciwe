@@ -1,6 +1,6 @@
 <?php
 
-namespace form\class\form;
+namespace form\formCieplo\class\form;
 
 class LocalFormHomeModel {
 

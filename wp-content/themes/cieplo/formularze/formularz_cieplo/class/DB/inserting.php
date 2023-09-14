@@ -1,6 +1,6 @@
 <?php
 
-namespace form\class\DB;
+namespace form\formCieplo\class\DB;
 
 require_once('connect_to_db.php');
 

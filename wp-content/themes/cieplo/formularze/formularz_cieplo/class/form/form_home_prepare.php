@@ -1,12 +1,14 @@
 <?php
 
-namespace form\class\form;
+namespace form\formCieplo\class\form;
 
-require('form_home_model.php');
+$dir = dirname(dirname($_SERVER['SCRIPT_FILENAME']));
 
-use form\class\form\LocalFormHomeModel;
+require_once($dir.'/inter/inter_Form.php');
 
-class FormHomePrepare extends LocalFormHomeModel {
+use form\inter\EkoPumpFormInterface;
+
+class FormHomePrepare implements EkoPumpFormInterface {
     public $buildingType;
     public $constructionYear;
     public $localizationCity;
@@ -71,7 +73,7 @@ class FormHomePrepare extends LocalFormHomeModel {
 
 
 
-    public function setParametersBuilding($arrayFieldsForm ) {
+    public function setParametersBuilding($arrayFieldsForm ): void {
         foreach($arrayFieldsForm as $keyField => $valField) {
             switch($keyField) {
                 case 'building_type':
@@ -240,7 +242,7 @@ class FormHomePrepare extends LocalFormHomeModel {
         }
     }
 
-    public function parameters_parse_json(){
+    public function parametersParseJson(): array{
         ## zmienne lokalne funkcji
         $arrayFields = array();
 

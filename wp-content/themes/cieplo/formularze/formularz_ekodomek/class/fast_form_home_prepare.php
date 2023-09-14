@@ -1,8 +1,14 @@
 <?php
 
-namespace form\class;
+namespace form\formEko\class;
 
-class FastFormHomePrepare {
+$dir = dirname(dirname($_SERVER['SCRIPT_FILENAME']));
+
+require_once($dir.'/inter/inter_Form.php');
+
+use form\inter\EkoPumpFormInterface;
+
+class FastFormHomePrepare implements EkoPumpFormInterface {
 
     public $heatingArea;
     public $localizationCity;
@@ -28,7 +34,7 @@ class FastFormHomePrepare {
 
 
 
-    public function setParametersBuilding($arrayFieldsForm ) {
+    public function setParametersBuilding($arrayFieldsForm ): void {
         foreach($arrayFieldsForm as $keyField => $valField) {
             switch($keyField) {
                 case 'heating_area':
@@ -96,5 +102,12 @@ class FastFormHomePrepare {
                     break;                 
             }
         }
+    }
+
+    public function parametersParseJson(): array {
+        ## zmienne lokalne funkcji
+        $arrayFields = array();
+
+        return $arrayFields;
     }
 }

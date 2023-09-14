@@ -1,6 +1,6 @@
 <?php /* Template Name: Formularz_cieplo */ ?>
 <?
-require(dirname(__FILE__).'/formularz_cieplo/class/miasta.php');
+require(dirname(__FILE__).'/formularze/formularz_cieplo/class/miasta.php');
 
 use form\class\getApiCiti;
 
@@ -25,27 +25,27 @@ $homeDir = bloginfo('stylesheet_directory');
                 <a id="tab_6" numb="6"><span></span>Ogrzewanie</a>
             </div>
             <?php global $current_user; wp_get_current_user(); ?>
-            <form id="form_cieplo" method="POST" action="<?php bloginfo('stylesheet_directory'); ?>/formularz_cieplo/set_form_objects.php">
+            <form id="form_cieplo" method="POST" action="<?php bloginfo('stylesheet_directory'); ?>/formularze/formularz_cieplo/set_form_objects.php">
                 <div class="formularz_box">            
                     <?php 
                     if ( is_user_logged_in() ) {
                         echo '<div id="tab_1" class="tab show" numb="1">';
-                            get_template_part('./formularz_cieplo/panels/panel-building'); 
+                            get_template_part('./formularze/formularz_cieplo/panels/panel-building'); 
                         echo '</div>';
                         echo '<div id="tab_2" class="tab" numb="2">'; 
-                            get_template_part('./formularz_cieplo/panels/panel-localization'); 
+                            get_template_part('./formularze/formularz_cieplo/panels/panel-localization'); 
                         echo '</div>';
                         echo '<div id="tab_3" class="tab" numb="3">'; 
-                            get_template_part('./formularz_cieplo/panels/panel-sizes'); 
+                            get_template_part('./formularze/formularz_cieplo/panels/panel-sizes'); 
                         echo '</div>';
                         echo '<div id="tab_4" class="tab" numb="4">'; 
-                            get_template_part('./formularz_cieplo/panels/panel-wall'); 
+                            get_template_part('./formularze/formularz_cieplo/panels/panel-wall'); 
                         echo '</div>';
                         echo '<div id="tab_5" class="tab" numb="5">'; 
-                            get_template_part('./formularz_cieplo/panels/panel-attic-ground_floor'); 
+                            get_template_part('./formularze/formularz_cieplo/panels/panel-attic-ground_floor'); 
                         echo '</div>';
                         echo '<div id="tab_6" class="tab" numb="6">'; 
-                            get_template_part('./formularz_cieplo/panels/panel-heating'); 
+                            get_template_part('./formularze/formularz_cieplo/panels/panel-heating'); 
                         echo '</div>';
                     } else { 
                         print 'Formularz dostepny tylko dla zalogowanych użytkowników. <a href="'.$homeDir.'/Cieplo_wlasciwe/my-account"> Zaloguj się </a> lub <a href="#"> zarejestruj </a> ';          
