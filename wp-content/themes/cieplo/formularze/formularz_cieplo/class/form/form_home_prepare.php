@@ -58,7 +58,15 @@ class FormHomePrepare implements EkoPumpFormInterface {
     public $bottomIsolationMaterial;
     public $bottomIsolationSize;
     public $whatsOver;
+    public $unheatedSpaceOverTypeApartment;
+    public $hasTopIsolationApartment;
+    public $topIsolationMaterialApartment;
+    public $topIsolationSizeApartment;
     public $whatsUnder; 
+    public $unheatedSpaceUnderTypeApartment;
+    public $hasBottomIsolationApartment;
+    public $bottomIsolationMaterialApartment;
+    public $bottomIsolationSizeApartment;
     public $whatsNorth; 
     public $whatsEast;
     public $whatsSouth;
@@ -204,10 +212,34 @@ class FormHomePrepare implements EkoPumpFormInterface {
                     break;   
                 case 'whats_over':
                     $this->whatsOver = $valField;
-                    break;                       
+                    break;   
+                case 'unheated_space_over_type_apartment':
+                    $this->unheatedSpaceOverTypeApartment = $valField;
+                    break; 
+                case 'has_top_isolation_apartment':
+                    $this->hasTopIsolationApartment = $valField;
+                    break; 
+                case 'top_isolation_material_apartment':
+                    $this->topIsolationMaterialApartment = $valField;
+                    break; 
+                case 'top_isolation_size_apartment':
+                    $this->topIsolationSizeApartment = $valField;
+                    break;                                                          
                 case 'whats_under':
                     $this->whatsUnder = $valField;
                     break;   
+                case 'unheated_space_under_type_apartment':
+                    $this->unheatedSpaceUnderTypeApartment = $valField;
+                    break; 
+                case 'has_bottom_isolation_apartment':
+                    $this->hasBottomIsolationApartment = $valField;
+                    break; 
+                case 'bottom_isolation_material_apartment':
+                    $this->bottomIsolationMaterialApartment = $valField;
+                    break; 
+                case 'bottom_isolation_size_apartment':
+                    $this->bottomIsolationSizeApartment = $valField;
+                    break;                                                                                     
                 case 'whats_north':
                     $this->whatsNorth = $valField;
                     break;
@@ -268,7 +300,7 @@ class FormHomePrepare implements EkoPumpFormInterface {
                 'building_length'=> $this->buildingLength,
                 'building_width'=> $this->buildingWidth
             );
-        } elseif(($this->buildingShape === 'regular' && $this->typAreaSize === 'size_area') || $this->buildingType === 'apartment') {
+        } elseif(($this->buildingShape === 'regular' && $this->typAreaSize === 'size_area')) {
             $arrayFields += array(                                           
                 'floor_area'=> $this->floorArea,
             );
@@ -277,7 +309,7 @@ class FormHomePrepare implements EkoPumpFormInterface {
                 'floor_area'=> $this->floorArea,
                 'floor_perimeter'=> $this->floorPerimeter,
             );
-        }
+        }  
 
         ## Liczba pięter w zależności od typu budynky 
         if($this->buildingType === 'apartment') {
@@ -331,7 +363,6 @@ class FormHomePrepare implements EkoPumpFormInterface {
         ### Ściany
         ## Dodanie kolejnych pozycji do tablicy json
         $arrayFields += array(                                   
-            'construction_type'=> $this->constructionType,
             'wall_size'=> $this->wallSize,            
         );
 
@@ -371,6 +402,26 @@ class FormHomePrepare implements EkoPumpFormInterface {
 
         ## Jeśli typ budynku = apartment 
         if($this->buildingType === 'apartment') {
+            if($this->whatsOver == 'unheated_room' ) {
+                $arrayFields += array(                                   
+                    'unheated_space_over_type'=> $this->unheatedSpaceOverTypeApartment,
+                );            
+            }
+            if($this->hasTopIsolationApartment == '1' ) {
+                $arrayFields += array(  
+                    'top_isolation'=> array('material'=>$this->topIsolationMaterialApartment, 'size'=>$this->topIsolationSizeApartment),               
+                );          
+            }
+            if($this->whatsUnder == 'unheated_room' ) {
+                $arrayFields += array(                                   
+                    'unheated_space_under_type'=> $this->unheatedSpaceUnderTypeApartment,
+                );            
+            }
+            if($this->hasBottomIsolationApartment == '1' ) {
+                $arrayFields += array(  
+                    'bottom_isolation'=> array('material'=>$this->bottomIsolationMaterialApartment, 'size'=>$this->bottomIsolationSizeApartment),               
+                );          
+            }
             $arrayFields += array(                                   
                 'whats_over'=> $this->whatsOver,
                 'whats_under'=> $this->whatsUnder,
@@ -382,13 +433,9 @@ class FormHomePrepare implements EkoPumpFormInterface {
         } else {
 
             ## Jeśli poddasze nieogrzewane
-            if(in_array('0',$this->buildingHeatedFloors)) {
-                null;
-            } else {
-                $arrayFields += array(                                   
-                    'unheated_space_over_type'=> $this->topSituation,                
-                );
-            }
+            $arrayFields += array(                                   
+                'unheated_space_over_type'=> $this->topSituation,                
+            );
 
             ## Jeśli jest izolacja dachu
             if($this->hasTopIsolation == 'true') {
@@ -413,9 +460,14 @@ class FormHomePrepare implements EkoPumpFormInterface {
         );
 
         if($this->hasIncludeHotWater === 'true') {
-            $arrayFields += array(                                   
+            $arrayFields += array(            
+                'include_hot_water' => $this->hasIncludeHotWater,                       
                 'hot_water_persons'=> $this->hotWaterPersons,
                 'hot_water_use' => $this->hotWaterUsage,          
+            );
+        } else {
+            $arrayFields += array(            
+                'include_hot_water' => 'false',                               
             );
         }
 

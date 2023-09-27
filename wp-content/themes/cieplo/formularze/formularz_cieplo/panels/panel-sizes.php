@@ -210,49 +210,49 @@
             </div>
             <div class="checkbox" id="building_floors_selected_single_house" value="1">
                 <label class=" ">
-                    <input type="checkbox" id="building_heated_floors_0" name="building_heated_floors[]" class="" value="0" checked="checked">
+                    <input type="checkbox" id="building_heated_floors_0" name="building_heated_floors[]" class="" value="1" checked="checked">
                     <span class="checkbox-material"><span class="check"></span></span> 
                         Parter
                 </label>
             </div>            
             <div class="checkbox" style="display: none;" id="building_floors_selected_single_house" value="2">
                 <label class=" ">
-                    <input type="checkbox" id="calculation_building_heated_floors_1" name="building_heated_floors[]" class="" value="1">
+                    <input type="checkbox" id="calculation_building_heated_floors_1" name="building_heated_floors[]" class="" value="2">
                     <span class="checkbox-material"><span class="check"></span></span> 
                         1. piętro
                 </label>
             </div>
             <div class="checkbox" style="display: none;" id="building_floors_selected_single_house" value="3">
                 <label class=" ">
-                    <input type="checkbox" id="calculation_building_heated_floors_2" name="building_heated_floors[]" class="" value="2">
+                    <input type="checkbox" id="calculation_building_heated_floors_2" name="building_heated_floors[]" class="" value="3">
                     <span class="checkbox-material"><span class="check"></span></span> 
                         2. piętro
                 </label>
             </div>
             <div class="checkbox" style="display: none;" id="building_floors_selected_single_house" value="4">
                 <label class=" ">
-                    <input type="checkbox" id="building_heated_floors_3" name="building_heated_floors[]" class="" value="3">
+                    <input type="checkbox" id="building_heated_floors_3" name="building_heated_floors[]" class="" value="4">
                     <span class="checkbox-material"><span class="check"></span></span>
                         3. piętro
                 </label>
             </div>
             <div class="checkbox" style="display: none;" id="building_floors_selected_single_house" value="5">
                 <label class=" ">
-                    <input type="checkbox" id="building_heated_floors_4" name="building_heated_floors[]" class="" value="4">
+                    <input type="checkbox" id="building_heated_floors_4" name="building_heated_floors[]" class="" value="5">
                     <span class="checkbox-material"><span class="check"></span></span>
                         4. piętro
                 </label>
             </div>
-            <div class="checkbox" style="display: none;" id="building_floors_selected_single_house" value="5">
+            <div class="checkbox" style="display: none;" id="building_floors_selected_single_house" value="6">
                 <label class=" ">
-                    <input type="checkbox" id="building_heated_floors_5" name="building_heated_floors[]" class="" value="5">
+                    <input type="checkbox" id="building_heated_floors_5" name="building_heated_floors[]" class="" value="6">
                     <span class="checkbox-material"><span class="check"></span></span>
                         5. piętro
                 </label>
             </div>
             <div class="checkbox" style="display: block;" id="building_floors_selected_single_house" value="steep">
                 <label class=" ">
-                    <input type="checkbox" id="building_heated_floors_roof" name="building_heated_floors[]" class="" checked="checked">
+                    <input type="checkbox" id="building_heated_floors_roof" name="building_heated_floors[]" floor="steep" value="2" >
                     <span class="checkbox-material"><span class="check"></span></span> 
                         Poddasze
                 </label>

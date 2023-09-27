@@ -36,7 +36,7 @@
     </div>
 </div>
 <div class="row" building="not_apartment_hiden">
-    <div class="div_form_6_indoor_temperature col-md-6">
+    <div id="div_form_6_indoor_temperature" class="col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Temperatura w pomieszczeniach ogrzewanych
         </label>
@@ -61,15 +61,15 @@
     </div>
 </div>
 <!-- instalacja grzewcza -->
-<div class="row" building="not_apartment">
+<div class="row" mainheating="device" style="display: none;">
     <div class="div_form_title_subsection col-md-6">
         <p class="subsection_div_form"> Instalacja grzewcza</p>        
     </div>
 </div>
-<div class="row" building="not_apartment">
+<div class="row" mainheating="device" style="display: none;">
     <div id="div_form_6_heating_system_type" class="div_form_6 col-md-6">
         <label for="" class="label_small_title col-sm-4">
-            Jak intensywnie używana jest ciepła woda? 
+            Rodzaj instalacji centralnego ogrzewania 
         </label>
         <div class="col-sm-8">
             <select id="heating_system_type" name="heating_system_type" class=" form-control">
@@ -82,6 +82,23 @@
                 <option value="other">Ogrzewanie nadmuchowe</option>
                 <option value="none">Brak centralnego ogrzewania</option>
             </select>
+        </div>
+    </div>
+</div>
+<div class="row" mainheating="system" style="display: none;">
+    <div id="div_form_6_heating_system_temperature" class="div_form_6 col-md-6">
+        <label for="" class="label_small_title col-sm-4">
+            Maksymalna temperatura zasilania instalacji 
+        </label>
+        <div class="col-sm-8">
+            <select id="heating_system_temperature" name="heating_system_temperature" class=" form-control">
+                <option value="" selected="selected">– proszę wybrać –</option>
+                <option value="0">Nie wiem</option>
+                <option value="35">Do 35 st.C</option>
+                <option value="45">Do 45 st.C</option>
+                <option value="55">Do 55 st.C</option>
+                <option value="99">Ponad 60 st.C</option>
+            </select>            
         </div>
     </div>
 </div>
@@ -135,32 +152,6 @@
         </div>
     </div>
 </div>
-<!-- Energia odnawialna -->
-<div class="row" building="not_apartment_hiden">
-    <div class="div_form_title_subsection col-md-6">
-        <p class="subsection_div_form"> Energia odnawialna</p>        
-    </div>
-</div>
-<div class="row" building="not_apartment_hiden">
-    <div id="div_form_6_renewables_list" class="div_form_6 col-md-6" numb="6">
-        <label class="label_small_title col-sm-4" for=""> </label>
-        <div class="div_checkbox col-sm-8">
-            <label class="label_checkbox" id="renewables_list" value="0">
-                <input type="checkbox" id="renewables_list_0" name="renewables_list[]" class="" value="pv">
-                <span class="checkbox-material">
-                    <span class="check">                    
-                    </span>
-                </span>
-                Instalacja fotowolticzna
-            </label>
-            <label class="label_checkbox" id="renewables_list" value="1">
-                <input type="checkbox" id="renewables_list_1" name="renewables_list[]" class="" value="solar">
-                <span class="checkbox-material">
-                    <span class="check">                    
-                    </span>
-                </span>
-                Kolektory słoneczne 
-            </label>
-        </div>
-    </div>
+<div class="tab_div_button"> 
+    <a numb="6" class="button next_form">Dalej</a>
 </div>

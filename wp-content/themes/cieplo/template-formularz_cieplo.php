@@ -23,6 +23,7 @@ $homeDir = bloginfo('stylesheet_directory');
                 <a id="tab_4" numb="4"><span></span>Ściany</a>
                 <a id="tab_5" numb="5"><span></span>Ocieplenie</a>
                 <a id="tab_6" numb="6"><span></span>Ogrzewanie</a>
+                <a id="tab_7" numb="7"><span></span>Wynik</a>
             </div>
             <?php global $current_user; wp_get_current_user(); ?>
             <form id="form_cieplo" method="POST" action="<?php bloginfo('stylesheet_directory'); ?>/formularze/formularz_cieplo/set_form_objects.php">
@@ -47,16 +48,16 @@ $homeDir = bloginfo('stylesheet_directory');
                         echo '<div id="tab_6" class="tab" numb="6">'; 
                             get_template_part('./formularze/formularz_cieplo/panels/panel-heating'); 
                         echo '</div>';
+                        echo '<div id="tab_7" class="tab" numb="7">'; 
+                            get_template_part('./formularze/formularz_cieplo/panels/panel-summary'); 
+                        echo '</div>';
                     } else { 
                         print 'Formularz dostepny tylko dla zalogowanych użytkowników. <a href="'.$homeDir.'/Cieplo_wlasciwe/my-account"> Zaloguj się </a> lub <a href="#"> zarejestruj </a> ';          
                     }                      
                     ?>
                     <a class="accept_form">Zatwierdź</a> 
                 </div>                
-            </form>           
-            <div class='wynik'>
-               
-            </div>
+            </form>                       
         </div>
     </div>
 </section>

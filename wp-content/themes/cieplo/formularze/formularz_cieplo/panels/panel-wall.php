@@ -29,7 +29,7 @@
 </div>
 <!-- Materiał w ramach construction type = traditional -->
 <div class="row" building="not_apartment_hiden">
-    <div class="div_form_4_wall_size col-md-6">
+    <div id="div_form_4_wall_size" class="col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Całkowita grubość ścian zewnętrznych
         </label>
@@ -165,7 +165,7 @@
         </div>
     </div>
 </div>
-<div class="row">
+<div class="row" isolation="internal" style="display: none;">
     <div id="div_form_4_internal_wall_isolation_material" class="div_form_4 col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Izolacja wewnątrz ściany 
@@ -193,7 +193,7 @@
         </div>
     </div>
 </div>
-<div class="row" building="not_apartment_hiden">
+<div class="row" isolation="internal" style="display: none;">
     <div id="div_form_4_internal_wall_isolation_size" class="col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Grubość
@@ -205,12 +205,12 @@
     </div>
 </div>
 <!-- Docieplenie -->
-<div class="row" building="not_apartment_hiden">
+<div class="row" isolation="external_head" style="display: none;">
     <div class="div_form_title_subsection col-md-6">
         <p class="subsection_div_form"> Docieplenie </p>
     </div>
 </div>
-<div class="row">
+<div class="row" isolation="external_head" style="display: none;">
     <div id="div_form_4_has_external_wall_isolation" class="div_form_4 col-md-6">
         <label for="has_external_wall_isolation" class="label_small_title col-sm-4">
             Dom jest docieplony
@@ -229,7 +229,7 @@
         </div>
     </div>
 </div>
-<div class="row">
+<div class="row" isolation="external" style="display: none;">
     <div id="div_form_4_external_wall_isolation_material" class="div_form_4 col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Docieplenie od zewnątrz
@@ -257,8 +257,8 @@
         </div>
     </div>
 </div>
-<div class="row" building="not_apartment_hiden" >
-    <div class="div_form_4_external_wall_isolation_size col-md-6">
+<div class="row" isolation="external" style="display: none;">
+    <div id="div_form_4_external_wall_isolation_size" class="col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Grubość
         </label>
@@ -293,7 +293,7 @@
     </div>
 </div>
 <div class="row" building="not_apartment_hiden">
-    <div class="div_form_4_number_windows col-md-6">
+    <div id="div_form_4_number_windows" class="col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Liczba okien
         </label>
@@ -304,23 +304,23 @@
     </div>
 </div>
 <div class="row" building="not_apartment_hiden" >
-    <div class="div_form_4_number_balcony_doors col-md-6">
+    <div id="div_form_4_number_balcony_doors" class="col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Liczba drzwi balkonowych 
         </label>
         <div class="col-sm-8">
-            <input type="text" id="number_balcony_doors" name="number_balcony_doors">
+            <input type="number" id="number_balcony_doors" name="number_balcony_doors" maxlength="2" pattern=".{1,}">
             <span>szt.</span>
         </div>        
     </div>
 </div>
 <div class="row" building="not_apartment_hiden" >
-    <div class="div_form_4_number_huge_glazings col-md-6">
+    <div id="div_form_4_number_huge_glazings" class="col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Liczba duzych przeszkleń
         </label>
         <div class="col-sm-8">
-            <input type="text" id="number_huge_glazings" name="number_huge_glazings">
+            <input type="number" id="number_huge_glazings" name="number_huge_glazings" maxlength="2" pattern=".{1,}">
             <span>szt.</span>
         </div>        
     </div>
@@ -351,7 +351,7 @@
     </div>
 </div>
 <div class="row" building="not_apartment_hiden">
-    <div class="div_form_4_number_doors col-md-6">
+    <div id="div_form_4_number_doors" class="col-md-6">
         <label for="" class="label_small_title col-sm-4">
             Liczba drzwi zewnętrznych
         </label>    
